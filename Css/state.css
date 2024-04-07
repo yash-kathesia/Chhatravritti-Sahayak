@@ -1,0 +1,29 @@
+:root {
+  --main_color: antiquewhite;
+}
+.state {
+  background-color: var(--main_color);
+}
+header {
+  background-color: var(--main_color);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* footer */
+footer {
+  background-color: var(--main_color);
+  text-align: center;
+  line-height: 2.3rem;
+  margin-top: auto;
+}
+
+footer p {
+  margin: auto;
+}

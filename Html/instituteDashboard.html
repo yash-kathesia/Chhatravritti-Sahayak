@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Institute Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../CSS/students.css" />
+    <link rel="stylesheet" href="../CSS/mysch.css" />
+    <link rel="stylesheet" href="../CSS/stateDashboard.css" />
+    <script></script>
+  </head>
+  <body>
+    <div id="alert" class="text-center mt-3 text-danger">
+      No Request from any State
+    </div>
+    <header
+      class="d-flex justify-content-between align-items-center m-5 students"
+      style="position: relative; top: 6px"
+    >
+      <div><h2>Institue Dashboard</h2></div>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="mx-2">
+          <a href="../HTML/index.html"
+            ><button class="btn btn-info">&larr; Go Back</button></a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="sDashboard mb-4">
+        <div>
+          <h4>1)</h4>
+          <div>
+            <label for="sstate">Institue Name : </label
+            ><span>L.k. College of Engineering</span>
+          </div>
+          <div>
+            <label for="sstate">Institue State : </label><span>Rajasthan</span>
+          </div>
+          <div>
+            <label for="sstate">Student Name : </label><span>xyzbhai</span>
+          </div>
+          <div>
+            <label for="sstate">Student Email : </label
+            ><span>xyz@gmail.com</span>
+          </div>
+          <div>
+            <label for="sstate">Student Mobile : </label
+            ><span>+91 23409 77633</span>
+          </div>
+          <div>
+            <label for="sstate">Enrollment Number : </label
+            ><span>123455789012</span>
+          </div>
+          <div>
+            <label for="sstate">Course(sem) : </label><span>IT(sem-5)</span>
+          </div>
+          <div>
+            <label for="sstate">Scholarship State : </label><span>Gujrat</span>
+          </div>
+          <div>
+            <label for="sname">Scholarship Name : </label
+            ><span>Digital Gujrat</span>
+          </div>
+          <div>
+            <label for="date">Applied Date : </label><span>10/9/2023</span>
+          </div>
+          <div>
+            <label for="sname">Status : </label
+            ><span
+              ><button class="btn btn-info" id="status">
+                Pending.....
+              </button></span
+            >
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h4>Documents</h4>
+          <div>
+            <label for="sstate">Aadhar Card : </label
+            ><span
+              ><a href="../Assets/Aadhaar Card.jpeg" download="."
+                >Aadhar Card</a
+              ></span
+            >
+          </div>
+          <div>
+            <label for="ic">Income Certificate : </label
+            ><span
+              ><a href="../Assets/Family Income Certificate.jpeg" download="">
+                Income Certificate</a
+              ></span
+            >
+          </div>
+          <div>
+            <label for="lc">Leaving Certificate : </label
+            ><span><a href="../Assets/LC.jpeg" download=""> Lc</a></span>
+          </div>
+          <div>
+            <label for="fee">Fee Receipt : </label
+            ><span
+              ><a href="../Assets/Fees.jpeg" download="">Fee Receipt</a></span
+            >
+          </div>
+          <div>
+            <label for="result">Marksheet : </label
+            ><span
+              ><a href="../Assets/Result.jpeg" download="">Marksheet</a></span
+            >
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center mt-4 mb-4">
+          <div>
+            <button class="btn btn-success" id="verify">Approve</button>
+          </div>
+          <a href="/HTML/reject.html">
+            <button class="btn btn-danger mx-2" id="reject">Reject</button>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>copyright &copy; All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // Retrieve the notification message from the cookie
+      const cookies = document.cookie.split("; ");
+      for (const cookie of cookies) {
+        const [name, value] = cookie.split("=");
+        if (name === "notificationMessage") {
+          document.getElementById("alert").textContent =
+            decodeURIComponent(value);
+          // Delete the cookie to clear the notification
+          document.cookie =
+            "notificationMessage=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+          break;
+        }
+      }
+
+      document.getElementById("verify").addEventListener("click", function () {
+        // Store the notification message in a cookie
+        document.cookie =
+          "notificationMessageFromInstitution=Institute Verified Details; path=/";
+      });
+
+      const verify = document.getElementById("verify");
+      const status = document.getElementById("status");
+
+      verify.addEventListener("click", () => {
+        alert("Response Sent to Home State");
+        status.innerHTML = "Approved";
+        status.style.background = "green";
+        // Listen for messages sent from other webpages (Page A)
+        sessionStorage.setItem("instituteTesponse", "Approved");
+        document.getElementById("reject").style.display = "none";
+        verify.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

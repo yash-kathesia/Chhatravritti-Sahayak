@@ -1,0 +1,125 @@
+:root {
+  --main_color: antiquewhite;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* max-width */
+/* purpose */
+
+header img {
+  width: 90vw;
+  height: 480px;
+  position: relative;
+  top: -30px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.insidePurpose {
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 90vw;
+  display: block;
+  background-color: var(--main_color);
+  margin: auto;
+}
+
+.insidePurpose h2,
+.insidePurpose p {
+  margin-top: 5px;
+}
+
+.insidePurpose h2::first-letter,
+.insideContact h2::first-letter {
+  font-size: 40px;
+  color: rgb(255, 50, 50);
+}
+
+.insidePurpose p::before {
+  content: "*";
+}
+
+.insidePurpose p {
+  font-size: 22px;
+}
+
+/* register */
+.register,
+.contact {
+  margin-top: 20px;
+}
+
+.register .applicable {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: var(--main_color);
+  max-width: 90vw;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.register a button,
+.contact button {
+  background-color: rgb(248, 222, 188);
+  padding: 10px;
+  width: 100px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.register button:hover,
+.contact button:hover {
+  background-color: var(--main_color);
+  cursor: pointer;
+}
+
+/* contact */
+.contact {
+  margin-bottom: 30px;
+}
+.insideContact {
+  max-width: 90vw;
+  background-color: var(--main_color);
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+.insideContact h2 {
+  position: relative;
+  left: -39px;
+  margin-bottom: 10px;
+}
+
+/* footer */
+footer {
+  background-color: var(--main_color);
+  text-align: center;
+  line-height: 2.3rem;
+}
+
+footer p {
+  margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .applicable {
+    flex-direction: column;
+  }
+  .applicable div {
+    margin-top: 13px;
+  }
+
+  .insideContact h2 {
+    left: -20px;
+  }
+}

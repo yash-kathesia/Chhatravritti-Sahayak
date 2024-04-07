@@ -1,0 +1,39 @@
+/* footer */
+:root {
+  --main_color: antiquewhite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: var(--main_color);
+  border-radius: 20px;
+  padding: 20px;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+label {
+  width: 180px;
+}
+footer {
+  background-color: var(--main_color);
+  text-align: center;
+  line-height: 2.3rem;
+}
+
+footer p {
+  margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .students {
+    flex-direction: column;
+  }
+  .students h2 {
+    text-align: center;
+  }
+}

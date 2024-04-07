@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MySCH</title>
+    <link rel="stylesheet" href="../CSS/students.css" />
+    <link rel="stylesheet" href="../CSS/mysch.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/index.js"></script>
+  </head>
+  <body>
+    <header
+      class="d-flex justify-content-between align-items-center m-5 mysch"
+      style="position: relative; top: 6px"
+    >
+      <div><h2>Applied Scholarships</h2></div>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="mx-2">
+          <a href="../HTML/students.html"
+            ><button class="btn btn-info">&larr; Go Back</button></a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="applied">
+        <h4>1)</h4>
+        <div id="renew" style="margin-right: 30px" class="mb-3">
+          <button class="btn btn-danger">Renew Scholarship</button>
+        </div>
+        <div>
+          <label for="sid">Application Id : </label
+          ><span>12ej32jkqjr3iojfor</span>
+        </div>
+        <div>
+          <label for="sstate">Scholarship State : </label><span>Gujrat</span>
+        </div>
+        <div>
+          <label for="sname">Scholarship Name : </label
+          ><span>
+            BCK-80 Instrumental Assistance For Medical,Engineering,Diploma
+            students(SEBC),
+          </span>
+        </div>
+        <div>
+          <label for="date">Applied Date : </label><span>10/9/2023</span>
+        </div>
+        <div>
+          <label for="sname">Status : </label
+          ><span
+            ><p class="btn" id="pending">
+              <script>
+                sessionStorage.getItem("status") !== "Approved"
+                  ? (document.getElementById("pending").innerHTML =
+                      "Pending...")
+                    ? (document.getElementById("renew").style.display = "none")
+                    : "Pending..."
+                  : (document.getElementById("pending").innerHTML = "Approved")
+                  ? (document.getElementById("renew").style.display = "block")
+                  : "Pending";
+              </script>
+            </p></span
+          >
+        </div>
+
+        <div class="d-flex align-items-center mt-4">
+          <div>
+            <button class="btn btn-info">Edit Application</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>copyright &copy; All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main label {
+  width: 140px;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.applied {
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  margin: auto;
+}
+.applied span {
+  font-weight: 700;
+}
+
+/* footer */
+footer {
+  background-color: var(--main_color);
+  text-align: center;
+  line-height: 2.3rem;
+  margin-top: auto;
+}
+
+footer p {
+  margin: auto;
+}
+
+#renew {
+  position: relative;
+  top: 258px;
+  left: 160px;
+}
+
+@media screen and (max-width: 1000px) {
+  .mysch {
+    flex-direction: column;
+  }
+  .mysch h2 {
+    text-align: center;
+  }
+}

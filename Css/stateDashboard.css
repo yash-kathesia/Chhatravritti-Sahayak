@@ -1,0 +1,33 @@
+header {
+  background-color: var(--main_color);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.sDashboard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sDashboard label {
+  width: 170px;
+}
+
+/* footer */
+footer {
+  background-color: var(--main_color);
+  text-align: center;
+  line-height: 2.3rem;
+  margin-top: auto;
+}
+
+footer p {
+  margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .sDashboard {
+    flex-direction: column;
+  }
+}
